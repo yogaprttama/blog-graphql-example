@@ -1,19 +1,19 @@
 {
   "name": "blog-graphql-example",
   "version": "1.0.0",
-  "description": "Blog App using GraphQL",
-  "main": "server.js",
-  "type": "module",
+  "description": "GraphQL Server using Apollo",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
-  "keywords": [],
   "author": "Yoga Pratama",
   "license": "MIT",
+  "type": "module",
   "dependencies": {
-    "@apollo/server": "^4.4.0",
-    "graphql": "^16.6.0",
-    "sequelize": "^6.29.0",
-    "sqlite3": "^5.1.4"
+    "@apollo/server": "^4.9.4",
+    "datasource-sql": "^2.1.0",
+    "graphql": "^16.8.1",
+    "knex": "^3.0.1",
+    "sqlite3": "^5.1.6"
   }
 }
