@@ -6,6 +6,8 @@ import { GraphQLError } from 'graphql';
 import express from 'express';
 import http from 'http';
 import cors from 'cors';
+import fs from 'fs';
+import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import { typeDefs, resolvers } from './schema/index.js';
 import { KnexDatasource } from './db/KnexDatasource.js';
@@ -37,8 +39,14 @@ import { KnexDatasource } from './db/KnexDatasource.js';
     ]
   });
 
+  // Morgan logger
+  const accessLogStream = fs.createWriteStream('./access.log', { flags: 'a' });
+
   // Start server
   await server.start();
+
+  // setup the logger
+  app.use(morgan(':remote-addr [:date[clf]] ":method :url HTTP/:http-version" :status', { stream: accessLogStream }));
 
   // Security
   app.disable("x-powered-by");

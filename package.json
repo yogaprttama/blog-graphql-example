@@ -14,6 +14,7 @@
     "datasource-sql": "^2.1.0",
     "graphql": "^16.8.1",
     "knex": "^3.0.1",
+    "morgan": "^1.10.0",
     "sqlite3": "^5.1.6"
   }
 }
